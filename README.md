@@ -8,9 +8,10 @@ This was tested on Bazel 4.0.0, but should work on 3.5.0+.
 
 ## Testing
 
-Assuming you have Bazel 4.0.0 installed, just:
-- Clone this repository.
-- $ cd $REPO
-- $ bazel build //example:openapiv2
+Assuming you have Bazel 4.0.0 installed, just clone this repository and:
+```bash
+$ cd $REPO
+$ bazel build //example:openapiv2
+```
 
 Then you can copy the generated file.swagger.json file and paste into https://editor.swagger.io/.
