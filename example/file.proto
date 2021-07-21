@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package com.testapi;
+
+import "google/api/annotations.proto";
+
+message FooRequest {
+  string some_str = 1;
+  // Some foo comment.
+  int64 some_int64 = 2;
+  int32 some_int32 = 3;
+}
+
+message FooResponse {
+  string some_str = 1;
+  // Another foo comment.
+  int64 some_int64 = 2;
+  int32 some_int32 = 3;
+}
+
+message BarRequest {
+  string some_str = 1;
+  // Some bar comment.
+  int64 some_int64 = 2;
+  int32 some_int32 = 3;
+}
+
+message BarResponse {
+  string some_str = 1;
+  // Another bar comment.
+  int64 some_int64 = 2;
+  int32 some_int32 = 3;
+}
+
+service SomeService {
+    rpc Foo(FooRequest) returns (FooResponse) {
+        option (google.api.http) = {
+            post: "/v1/somemethod"
+            body: "*"
+        };
+    }
+
+    rpc Bar(BarRequest) returns (BarResponse) {
+        option (google.api.http) = {
+            get: "/v1/somemethod/{some_str}/{some_int64}/{some_int32}"
+        };
+    }
+}

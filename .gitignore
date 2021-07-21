@@ -1,0 +1,7 @@
+# Bazel
+/bazel-*
+
+# Ignore backup files.
+*~
+# Ignore Vim swap files.
+.*.swp

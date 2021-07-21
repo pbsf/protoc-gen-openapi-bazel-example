@@ -1,0 +1,15 @@
+load("@com_github_grpc_ecosystem_grpc_gateway//protoc-gen-openapiv2:defs.bzl", "protoc_gen_openapiv2")
+
+proto_library(
+    name = "proto_library",
+    srcs = ["file.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@googleapi//:annotations_proto",
+    ]
+)
+
+protoc_gen_openapiv2(
+    name = "openapiv2",
+    proto = ":proto_library",
+)
