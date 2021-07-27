@@ -10,7 +10,7 @@ This was tested on Bazel 4.0.0, but should work on 3.5.0+.
 
 Assuming you have Bazel 4.0.0 installed, just clone this repository and:
 ```bash
-$ cd $REPO
+$ cd protoc-gen-openapi-bazel-example
 $ bazel build //example:openapiv2
 ```
 
